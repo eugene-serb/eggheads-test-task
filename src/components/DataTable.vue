@@ -4,6 +4,8 @@
 
 <script>
   /* eslint-disable no-undef */
+  import templates from '@/components/templates.js';
+
   export default {
     name: 'DataTable',
     props: {
@@ -13,134 +15,144 @@
       },
     },
     data() {
-      const layout = {
-        rows: [
+      const config = {
+        view: 'datatable',
+        autoConfig: true,
+        autowidth: false,
+        autoheight: true,
+        resizeColumn: true,
+        dragColumn: 'order',
+        rowHeight: 40,
+        data: this.products,
+        columns: [
           {
-            view: 'template',
-            type: 'header',
-            template: 'Webix Lesson',
+            id: 'image',
+            css: 'table__column',
+            header: [
+              { text: 'Фото', css: 'table__header' },
+            ],
+            template: templates.image,
           },
           {
-            view: 'datatable',
-            autoConfig: true,
-            autowidth: false,
-            autoheight: true,
-            resizeColumn: true,
-            dragColumn: 'order',
-            rowHeight: 40,
-            data: this.products,
-            columns: [
-              {
-                id: 'image',
-                css: 'table__column',
-                header: [
-                  { text: 'Фото', css: 'table__header' },
-                ],
-                template: (item) => `<div class="table__image-container"><img class="table__image" src="/assets/thumbs/${item.image}" /></div>`,
-              },
-              {
-                id: 'sku',
-                sort: 'string',
-                css: 'table__column',
-                header: [
-                  { text: 'Артикул', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'schedule',
-                sort: 'string',
-                header: [
-                  { text: 'График продаж', css: 'table__header' },
-                ],
-                css: 'table__column',
-                template: webix.Sparklines.getTemplate({
-                  type: 'bar',
-                  width: 30,
-                }),
-                minWidth: 200,
-                width: 250,
-                maxWidth: 300,
-              },
-              {
-                id: 'name',
-                sort: 'string',
-                css: 'table__column',
-                header: [
-                  { text: 'Имя', css: 'table__header' },
-                ],
-                minWidth: 200,
-                width: 250,
-                maxWidth: 300,
-              },
-              {
-                id: 'brand',
-                sort: 'string',
-                css: 'table__column',
-                header: [
-                  { text: 'Бренд', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'merchant',
-                sort: 'string',
-                css: 'table__column',
-                header: [
-                  { text: 'Продавец', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'category',
-                sort: 'string',
-                css: 'table__column',
-                header: [
-                  { text: 'Группа', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'remain',
-                sort: 'int',
-                css: 'table__column',
-                header: [
-                  { text: 'Остаток', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'reviews',
-                sort: 'int',
-                css: 'table__column',
-                header: [
-                  { text: 'Отзывы', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'rating',
-                sort: 'int',
-                css: 'table__column',
-                header: [
-                  { text: 'Рейтинг', css: 'table__header' },
-                ],
-              },
-              {
-                id: 'cost',
-                sort: 'int',
-                css: 'table__column',
-                header: [
-                  { text: 'Цена', css: 'table__header' },
-                ],
-              },
+            id: 'sku',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: 'Артикул', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'like',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: '', css: 'table__header' },
+            ],
+            template: templates.like,
+          },
+          {
+            id: 'schedule',
+            sort: 'string',
+            header: [
+              { text: 'График продаж', css: 'table__header' },
+            ],
+            css: 'table__column',
+            template: webix.Sparklines.getTemplate({
+              type: 'bar',
+              width: 30,
+            }),
+            minWidth: 200,
+            width: 250,
+            maxWidth: 300,
+          },
+          {
+            id: 'name',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: 'Имя', css: 'table__header' },
+            ],
+            minWidth: 200,
+            width: 250,
+            maxWidth: 300,
+          },
+          {
+            id: 'brand',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: 'Бренд', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'merchant',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: 'Продавец', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'category',
+            sort: 'string',
+            css: 'table__column',
+            header: [
+              { text: 'Группа', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'remain',
+            sort: 'int',
+            css: 'table__column',
+            header: [
+              { text: 'Остаток', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'reviews',
+            sort: 'int',
+            css: 'table__column',
+            header: [
+              { text: 'Отзывы', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'rating',
+            sort: 'int',
+            css: 'table__column',
+            header: [
+              { text: 'Рейтинг', css: 'table__header' },
+            ],
+          },
+          {
+            id: 'cost',
+            sort: 'int',
+            css: 'table__column',
+            header: [
+              { text: 'Цена', css: 'table__header' },
             ],
           },
         ],
+        onClick: {
+          'table__like': (e, id) => this.handleLike(id),
+        },
       };
 
       return {
-        layout,
+        config,
       };
     },
     mounted() {
       webix.ready(() => {
-        webix.ui(this.layout, this.$el);
+        this.webix = webix.ui(this.config, this.$el);
       });
+    },
+    methods: {
+      handleLike(id) {
+        const item = this.webix.getItem(id);
+        item.like = !item.like;
+        this.webix.updateItem(id, item);
+      },
     },
   };
 </script>
@@ -173,5 +185,21 @@
 
   .table__image {
     width: 36px;
+  }
+
+  .table__like-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    margin: 2px 0 0 0;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .table__like {
+    width: 28px;
   }
 </style>
