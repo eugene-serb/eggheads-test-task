@@ -95,7 +95,7 @@
     height: 40px;
     margin: 0;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
   }
 
@@ -111,11 +111,30 @@
     height: 40px;
     margin: 0;
     padding: 0;
-    border-radius: 15px;
     overflow: hidden;
   }
 
   .table__like {
     width: 28px;
+  }
+
+  .table__position-container {
+    text-align: center;
+  }
+
+  .table__position-rate {
+    margin: 0 0 0 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--color-grey);
+    color: #FFFFFF;
+  }
+
+  .table__position-rate_plus {
+    background-color: var(--color-green);
+  }
+
+  .table__position-rate_minus {
+    background-color: var(--color-red);
   }
 </style>

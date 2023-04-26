@@ -23,9 +23,14 @@
   :root {
     --step-size: 4px;
     --color-black: #000000;
+    --color-white: #FFFFFF;
     --color-blue: #345be0;
+    --color-red: red;
+    --color-green: #0fb34e;
+    --color-grey: grey;
     --font-family: Avenir, Helvetica, Arial, sans-serif;
     --font-color: var(--color-black);
+    --font-size:  calc(var(--step-size) * 3);
     --table-header-font-size: calc(var(--step-size) * 4);
     --table-column-font-size: calc(var(--step-size) * 3);
   }
@@ -34,6 +39,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  html {
+    font-size: var(--font-size);
   }
 
   #app {

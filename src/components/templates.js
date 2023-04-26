@@ -1,5 +1,22 @@
 'use strict';
 
+const position = (item) => {
+  let styles = '';
+
+  if (item.rate > 0) {
+    styles = 'table__position-rate_plus';
+  } else if (item.rate < 0) {
+    styles = 'table__position-rate_minus';
+  }
+
+  return `
+    <div class="table__position-container">
+      <span>${item.position}</span>
+      <span class="table__position-rate ${styles}">${item.rate}</span>
+    </div>
+  `;
+}
+
 const image = (item) => {
   return `
     <div class="table__image-container">
@@ -21,6 +38,7 @@ const like = (item, likes) => {
 };
 
 const templates = {
+  position,
   image,
   like,
 };

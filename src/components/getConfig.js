@@ -16,6 +16,35 @@ const getConfig = ({ products, likes, handleLike }) => {
     data: products,
     columns: [
       {
+        id: 'loss',
+        sort: 'int',
+        css: 'table__column',
+        header: [
+          {
+            text: 'Упущенный %',
+            css: 'table__header'
+          },
+        ],
+        minWidth: 25,
+        width: 60,
+        maxWidth: 150,
+      },
+      {
+        id: 'position',
+        sort: 'int',
+        css: 'table__column',
+        header: [
+          {
+            text: 'Позиция',
+            css: 'table__header'
+          },
+        ],
+        template: templates.position,
+        minWidth: 50,
+        width: 100,
+        maxWidth: 150,
+      },
+      {
         id: 'image',
         css: 'table__column',
         header: [
