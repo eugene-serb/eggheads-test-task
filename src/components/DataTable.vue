@@ -4,7 +4,8 @@
 
 <script>
   /* eslint-disable no-undef */
-  import templates from '@/components/templates.js';
+
+  import getConfig from '@/components/getConfig.js';
 
   export default {
     name: 'DataTable',
@@ -15,128 +16,7 @@
       },
     },
     data() {
-      const config = {
-        view: 'datatable',
-        autoConfig: true,
-        autowidth: false,
-        autoheight: true,
-        resizeColumn: true,
-        dragColumn: 'order',
-        rowHeight: 40,
-        data: this.products,
-        columns: [
-          {
-            id: 'image',
-            css: 'table__column',
-            header: [
-              { text: 'Фото', css: 'table__header' },
-            ],
-            template: templates.image,
-          },
-          {
-            id: 'sku',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: 'Артикул', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'like',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: '', css: 'table__header' },
-            ],
-            template: templates.like,
-          },
-          {
-            id: 'schedule',
-            sort: 'string',
-            header: [
-              { text: 'График продаж', css: 'table__header' },
-            ],
-            css: 'table__column',
-            template: webix.Sparklines.getTemplate({
-              type: 'bar',
-              width: 30,
-            }),
-            minWidth: 200,
-            width: 250,
-            maxWidth: 300,
-          },
-          {
-            id: 'name',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: 'Имя', css: 'table__header' },
-            ],
-            minWidth: 200,
-            width: 250,
-            maxWidth: 300,
-          },
-          {
-            id: 'brand',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: 'Бренд', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'merchant',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: 'Продавец', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'category',
-            sort: 'string',
-            css: 'table__column',
-            header: [
-              { text: 'Группа', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'remain',
-            sort: 'int',
-            css: 'table__column',
-            header: [
-              { text: 'Остаток', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'reviews',
-            sort: 'int',
-            css: 'table__column',
-            header: [
-              { text: 'Отзывы', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'rating',
-            sort: 'int',
-            css: 'table__column',
-            header: [
-              { text: 'Рейтинг', css: 'table__header' },
-            ],
-          },
-          {
-            id: 'cost',
-            sort: 'int',
-            css: 'table__column',
-            header: [
-              { text: 'Цена', css: 'table__header' },
-            ],
-          },
-        ],
-        onClick: {
-          'table__like': (e, id) => this.handleLike(id),
-        },
-      };
+      const config = getConfig(this.products, this.handleLike); 
 
       return {
         config,
