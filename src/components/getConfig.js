@@ -19,16 +19,22 @@ const getConfig = ({ products, likes, handleLike }) => {
         id: 'image',
         css: 'table__column',
         header: [
-          { text: 'Фото', css: 'table__header' },
+          {
+            text: 'Фото',
+            css: 'table__header'
+          },
         ],
         template: templates.image,
       },
       {
         id: 'sku',
         sort: 'string',
-        css: 'table__column',
+        css: 'table__column table__column_blue',
         header: [
-          { text: 'Артикул', css: 'table__header' },
+          {
+            text: 'Артикул',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -36,7 +42,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'string',
         css: 'table__column',
         header: [
-          { text: '', css: 'table__header' },
+          {
+            text: '',
+            css: 'table__header'
+          },
         ],
         template: (item) => templates.like(item, likes),
       },
@@ -44,7 +53,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         id: 'schedule',
         sort: 'string',
         header: [
-          { text: 'График продаж', css: 'table__header' },
+          {
+            text: 'График продаж',
+            css: 'table__header'
+          },
         ],
         css: 'table__column',
         template: webix.Sparklines.getTemplate({
@@ -58,9 +70,12 @@ const getConfig = ({ products, likes, handleLike }) => {
       {
         id: 'name',
         sort: 'string',
-        css: 'table__column',
+        css: 'table__column table__column_blue',
         header: [
-          { text: 'Имя', css: 'table__header' },
+          {
+            text: 'Имя',
+            css: 'table__header'
+          },
         ],
         minWidth: 200,
         width: 250,
@@ -69,17 +84,23 @@ const getConfig = ({ products, likes, handleLike }) => {
       {
         id: 'brand',
         sort: 'string',
-        css: 'table__column',
+        css: 'table__column table__column_blue',
         header: [
-          { text: 'Бренд', css: 'table__header' },
+          {
+            text: 'Бренд',
+            css: 'table__header'
+          },
         ],
       },
       {
         id: 'merchant',
         sort: 'string',
-        css: 'table__column',
+        css: 'table__column table__column_blue',
         header: [
-          { text: 'Продавец', css: 'table__header' },
+          {
+            text: 'Продавец',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -87,7 +108,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'string',
         css: 'table__column',
         header: [
-          { text: 'Группа', css: 'table__header' },
+          {
+            text: 'Группа',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -95,7 +119,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'int',
         css: 'table__column',
         header: [
-          { text: 'Остаток', css: 'table__header' },
+          {
+            text: 'Остаток',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -103,7 +130,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'int',
         css: 'table__column',
         header: [
-          { text: 'Отзывы', css: 'table__header' },
+          {
+            text: 'Отзывы',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -111,7 +141,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'int',
         css: 'table__column',
         header: [
-          { text: 'Рейтинг', css: 'table__header' },
+          {
+            text: 'Рейтинг',
+            css: 'table__header'
+          },
         ],
       },
       {
@@ -119,7 +152,10 @@ const getConfig = ({ products, likes, handleLike }) => {
         sort: 'int',
         css: 'table__column',
         header: [
-          { text: 'Цена', css: 'table__header' },
+          {
+            text: 'Цена',
+            css: 'table__header'
+          },
         ],
       },
     ],

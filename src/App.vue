@@ -23,6 +23,7 @@
   :root {
     --step-size: 4px;
     --color-black: #000000;
+    --color-blue: #345be0;
     --font-family: Avenir, Helvetica, Arial, sans-serif;
     --font-color: var(--color-black);
     --table-header-font-size: calc(var(--step-size) * 4);
