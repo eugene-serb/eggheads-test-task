@@ -15,24 +15,47 @@
         default: () => [],
       },
     },
-    data() {
-      const config = getConfig(this.products, this.handleLike); 
+    computed: {
+      likes() {
+        return this.getLikes();
+      },
+      config() {
+        return getConfig({
+          products: this.products,
+          likes: this.likes,
+          handleLike: this.handleLike,
+        });
+      },
+    },
+    methods: {
+      getLikes() {
+        const raw = localStorage.getItem('likes');
 
-      return {
-        config,
-      };
+        try {
+          return (raw) ? JSON.parse(raw) : {};
+        } catch (error) {
+          console.error(error);
+          return {};
+        }
+      },
+      setLikes() {
+        localStorage.setItem('likes', JSON.stringify(this.likes));
+      },
+      handleLike(id) {
+        const item = this.webix.getItem(id);
+
+        item.like = !item.like;
+        
+        this.likes[item.id] = item.like;
+
+        this.setLikes();
+        this.webix.updateItem(id, item);
+      },
     },
     mounted() {
       webix.ready(() => {
         this.webix = webix.ui(this.config, this.$el);
       });
-    },
-    methods: {
-      handleLike(id) {
-        const item = this.webix.getItem(id);
-        item.like = !item.like;
-        this.webix.updateItem(id, item);
-      },
     },
   };
 </script>

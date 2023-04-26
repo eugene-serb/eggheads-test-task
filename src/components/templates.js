@@ -8,11 +8,11 @@ const image = (item) => {
   `;
 }
 
-const like = (item) => {
+const like = (item, likes) => {
   return `
     <div class="table__like-container">
       <img class="table__like" src="/assets/icons/${
-        (item.like)
+        (likes[item.id])
           ? 'favorite_black_24dp.svg'
           : 'favorite_border_black_24dp.svg'
       }" />

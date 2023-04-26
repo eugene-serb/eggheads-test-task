@@ -4,7 +4,7 @@
 
 import templates from '@/components/templates.js';
 
-const getConfig = (products, handleLike) => {
+const getConfig = ({ products, likes, handleLike }) => {
   return {
     view: 'datatable',
     autoConfig: true,
@@ -38,7 +38,7 @@ const getConfig = (products, handleLike) => {
         header: [
           { text: '', css: 'table__header' },
         ],
-        template: templates.like,
+        template: (item) => templates.like(item, likes),
       },
       {
         id: 'schedule',
