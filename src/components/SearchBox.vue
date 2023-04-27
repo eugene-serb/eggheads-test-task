@@ -41,6 +41,16 @@
     align-items: flex-end;
   }
 
+    .search:has(.search__input:focus) > .search__image,
+    .search:has(.search__input:not(:placeholder-shown)) > .search__image {
+      display: none;
+    }
+
+    .search:has(.search__input:focus) > .search__input,
+    .search:has(.search__input:not(:placeholder-shown)) > .search__input {
+      margin: 0;
+    }
+
   .search__input {
     margin: 0 0 0 -20px;
     padding: 4px;

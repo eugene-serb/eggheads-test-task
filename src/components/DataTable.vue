@@ -43,6 +43,66 @@
       },
     },
     methods: {
+      init() {
+        webix.ready(() => {
+          this.table = webix.ui(this.config, this.$el);
+
+          this.table.registerFilter(
+            document.getElementById('likeInput'),
+            {
+              columnId: 'like',
+              prepare: function (filter) {
+                return filter;
+              },
+              compare: function (cell, filter) {
+                if (filter) {
+                  return cell === true;
+                }
+
+                return true;
+              },
+            },
+            {
+              getValue: function (el) {
+                return el.checked;
+              },
+              setValue: function (el, value) {
+                el.checked = value;
+              },
+            },
+          );
+
+          this.table.registerFilter(
+            document.getElementById('search'),
+            {
+              columnId: 'any',
+              prepare: function (filter) {
+                return filter;
+              },
+              compare: function (cell, filter, item) {
+                if (filter) {
+                  return (
+                    item.sku.toLowerCase().includes(filter) ||
+                    item.name.toLowerCase().includes(filter) ||
+                    item.brand.toLowerCase().includes(filter) ||
+                    item.merchant.toLowerCase().includes(filter)
+                  );
+                }
+
+                return true;
+              },
+            },
+            {
+              getValue: function (target) {
+                return target.value;
+              },
+              setValue: function (target, value) {
+                target.value = value;
+              },
+            },
+          );
+        });
+      },
       getLikes() {
         const raw = localStorage.getItem('likes');
 
@@ -73,64 +133,7 @@
       },
     },
     mounted() {
-      webix.ready(() => {
-        this.table = webix.ui(this.config, this.$el);
-
-        this.table.registerFilter(
-          document.getElementById('likeInput'),
-          {
-            columnId: 'like',
-            prepare: function (filter) {
-              return filter;
-            },
-            compare: function (cell, filter) {
-              if (filter) {
-                return cell === true;
-              }
-
-              return true;
-            },
-          },
-          {
-            getValue: function (el) {
-              return el.checked;
-            },
-            setValue: function (el, value) {
-              el.checked = value;
-            },
-          },
-        );
-
-        this.table.registerFilter(
-          document.getElementById('search'),
-          {
-            columnId: 'any',
-            prepare: function (filter) {
-              return filter;
-            },
-            compare: function (cell, filter, item) {
-              if (filter) {
-                return (
-                  item.sku.toLowerCase().includes(filter) ||
-                  item.name.toLowerCase().includes(filter) ||
-                  item.brand.toLowerCase().includes(filter) ||
-                  item.merchant.toLowerCase().includes(filter)
-                );
-              }
-
-              return true;
-            },
-          },
-          {
-            getValue: function (target) {
-              return target.value;
-            },
-            setValue: function (target, value) {
-              target.value = value;
-            },
-          },
-        );
-      });
+      this.init();
     },
   };
 </script>
@@ -138,7 +141,6 @@
 <style>
   #table {
     width: 100%;
-    height: 100vh;
     overflow: hidden;
   }
 

@@ -54,6 +54,7 @@
 
   html {
     font-size: var(--font-size);
+    line-height: var(--font-size);
   }
 
   #app {

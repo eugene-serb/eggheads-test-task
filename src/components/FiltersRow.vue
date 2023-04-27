@@ -1,19 +1,26 @@
 ﻿<template>
   <div class="filters-row">
-    <SearchBox :tableID="tableID" />
-    <LikesBox :tableID="tableID" />
+    <div class="filters-row__left-container">
+      <SearchBox :tableID="tableID" />
+      <LikesBox :tableID="tableID" />
+    </div>
+    <div class="filters-row__right-container">
+      <TableSettings :tableID="tableID" />
+    </div>
   </div>
 </template>
 
 <script>
   import SearchBox from '@/components/SearchBox.vue';
   import LikesBox from '@/components/LikesBox.vue';
+  import TableSettings from '@/components/TableSettings.vue';
 
   export default {
     name: 'FiltersRow',
     components: {
       SearchBox,
       LikesBox,
+      TableSettings,
     },
     props: {
       tableID: {
@@ -30,8 +37,15 @@
     margin: 16px 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filters-row__left-container {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 16px;
+    gap: 0 16px;
   }
 </style>
