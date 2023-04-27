@@ -15,7 +15,7 @@ const position = (item) => {
       <span class="table__position-rate ${styles}">${item.rate}</span>
     </div>
   `;
-}
+};
 
 const image = (item) => {
   return `
@@ -23,7 +23,7 @@ const image = (item) => {
       <img class="table__image" src="/assets/thumbs/${item.image}" />
     </div>
   `;
-}
+};
 
 const like = (item) => {
   return `

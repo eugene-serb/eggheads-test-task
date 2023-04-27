@@ -6,12 +6,16 @@ import templates from '@/components/templates.js';
 
 const getConfig = ({ products, handleLike }) => {
   return {
+    id: 'table',
     view: 'datatable',
     autoConfig: true,
     autowidth: false,
     autoheight: true,
-    resizeColumn: true,
+    resizeColumn: {
+      size: 4,
+    },
     dragColumn: 'order',
+    scroll: true,
     rowHeight: 40,
     data: products,
     columns: [

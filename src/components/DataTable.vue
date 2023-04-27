@@ -70,6 +70,31 @@
     mounted() {
       webix.ready(() => {
         this.webix = webix.ui(this.config, this.$el);
+
+        this.webix.registerFilter(
+          document.getElementById('likeInput'),
+          {
+            columnId: 'like',
+            prepare: function (filter) {
+              return filter;
+            },
+            compare: function (cell, filter) {
+              if (filter) {
+                return cell === true;
+              }
+
+              return true;
+            },
+          },
+          {
+            getValue: function (el) {
+              return el.checked;
+            },
+            setValue: function (el, value) {
+              el.checked = value;
+            },
+          },
+        );
       });
     },
   };
@@ -77,8 +102,9 @@
 
 <style>
   #table {
+    width: 100%;
     height: 100vh;
-    width: 100vw;
+    overflow: hidden;
   }
 
   .table__header {
@@ -143,7 +169,8 @@
   }
 
   .table__position-rate_plus {
-    background-color: var(--color-green);
+    background-color: var(--color-green-dark);
+    color: var(--color-green-light);
   }
 
   .table__position-rate_minus {

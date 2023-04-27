@@ -1,14 +1,19 @@
 ﻿<template>
-  <DataTable :products="products" />
+  <section class="container">
+    <FiltersRow />
+    <DataTable :products="products" />
+  </section>
 </template>
 
 <script>
+  import products from '@/assets/products.json';
+  import FiltersRow from '@/components/FiltersRow.vue';
   import DataTable from '@/components/DataTable.vue';
-  import products from '@/assets/data.json';
 
   export default {
     name: 'App',
-    components: { 
+    components: {
+      FiltersRow,
       DataTable,
     },
     data() {
@@ -25,12 +30,13 @@
     --color-black: #000000;
     --color-white: #FFFFFF;
     --color-blue: #345be0;
-    --color-red: red;
-    --color-green: #0fb34e;
-    --color-grey: grey;
+    --color-grey: #b7b7b7;
+    --color-red: #f18578;
+    --color-green-dark: #e6f9ed;
+    --color-green-light: #08ba5e;
     --font-family: Avenir, Helvetica, Arial, sans-serif;
     --font-color: var(--color-black);
-    --font-size:  calc(var(--step-size) * 3);
+    --font-size: calc(var(--step-size) * 3);
     --table-header-font-size: calc(var(--step-size) * 4);
     --table-column-font-size: calc(var(--step-size) * 3);
   }
@@ -39,6 +45,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
   }
 
   html {
@@ -51,5 +63,23 @@
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      width: 640px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      width: 768px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container {
+      width: 1280px;
+    }
   }
 </style>
