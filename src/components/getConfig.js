@@ -58,6 +58,9 @@ const getConfig = ({ products, handleLike }) => {
           },
         ],
         template: templates.image,
+        minWidth: 40,
+        width: 60,
+        maxWidth: 80,
       },
       {
         id: 'sku',
@@ -81,6 +84,9 @@ const getConfig = ({ products, handleLike }) => {
           },
         ],
         template: (item) => templates.like(item),
+        minWidth: 40,
+        width: 60,
+        maxWidth: 80,
       },
       {
         id: 'schedule',
