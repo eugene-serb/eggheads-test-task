@@ -19,10 +19,20 @@
       likes() {
         return this.getLikes();
       },
+      computedProducts() {
+        const products = this.products;
+
+        products.forEach((item) => {
+          if (item.id in this.likes) {
+            item.like = true;
+          }
+        });
+
+        return products;
+      },
       config() {
         return getConfig({
-          products: this.products,
-          likes: this.likes,
+          products: this.computedProducts,
           handleLike: this.handleLike,
         });
       },
@@ -50,6 +60,8 @@
         } else {
           likes[item.id] = true;
         }
+
+        item.like = !item.like;
 
         this.setLikes(likes);
         this.webix.updateItem(id, item);
