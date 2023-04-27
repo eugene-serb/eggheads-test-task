@@ -95,6 +95,37 @@
             },
           },
         );
+
+        this.webix.registerFilter(
+          document.getElementById('search'),
+          {
+            columnId: 'any',
+            prepare: function (filter) {
+              return filter;
+            },
+            compare: function (cell, filter, item) {
+              if (filter) {
+                return (
+                  item.sku.toLowerCase().includes(filter) ||
+                  item.name.toLowerCase().includes(filter) ||
+                  item.brand.toLowerCase().includes(filter) ||
+                  item.merchant.toLowerCase().includes(filter)
+                );
+              }
+
+              return true;
+            },
+          },
+          {
+            getValue: function (target) {
+              return target.value;
+            },
+            setValue: function (target, value) {
+              target.value = value;
+            },
+          },
+        );
+
       });
     },
   };

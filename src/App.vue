@@ -1,5 +1,6 @@
 ﻿<template>
-  <section class="container">
+  <section class="container app">
+    <h1 class="app__header">Товары категории</h1>
     <FiltersRow />
     <DataTable :products="products" />
   </section>
@@ -47,12 +48,6 @@
     box-sizing: border-box;
   }
 
-  .container {
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-  }
-
   html {
     font-size: var(--font-size);
   }
@@ -63,6 +58,20 @@
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .app {
+    margin-top: 16px;
+  }
+
+  .app__header {
+    text-align: start;
   }
 
   @media (min-width: 768px) {
