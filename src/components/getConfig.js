@@ -4,9 +4,9 @@
 
 import templates from '@/components/templates.js';
 
-const getConfig = ({ products, handleLike }) => {
+const getConfig = ({ tableID, products, handleLike }) => {
   return {
-    id: 'table',
+    id: tableID,
     view: 'datatable',
     autoConfig: true,
     autowidth: false,

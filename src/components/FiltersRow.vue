@@ -1,13 +1,11 @@
 ﻿<template>
   <div class="filters-row">
-    <SearchBox @handle="filter" />
-    <LikesBox @handle="filter" />
+    <SearchBox :tableID="tableID" />
+    <LikesBox :tableID="tableID" />
   </div>
 </template>
 
 <script>
-  /* eslint-disable no-undef */
-
   import SearchBox from '@/components/SearchBox.vue';
   import LikesBox from '@/components/LikesBox.vue';
 
@@ -17,9 +15,10 @@
       SearchBox,
       LikesBox,
     },
-    methods: {
-      filter() {
-        $$('table').filterByAll()
+    props: {
+      tableID: {
+        type: String,
+        required: true,
       },
     },
   };

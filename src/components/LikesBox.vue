@@ -10,11 +10,19 @@
 </template>
 
 <script>
+  /* eslint-disable no-undef */
+
   export default {
     name: 'LikesBox',
+    props: {
+      tableID: {
+        type: String,
+        required: true,
+      },
+    },
     methods: {
       handle() {
-        this.$emit('handle');
+        $$(this.tableID).filterByAll()
       },
     },
   };

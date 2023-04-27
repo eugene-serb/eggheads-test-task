@@ -10,6 +10,10 @@
   export default {
     name: 'DataTable',
     props: {
+      tableID: {
+        type: String,
+        required: true,
+      },
       products: {
         type: Array,
         default: () => [],
@@ -32,6 +36,7 @@
       },
       config() {
         return getConfig({
+          tableID: this.tableID,
           products: this.computedProducts,
           handleLike: this.handleLike,
         });
@@ -52,7 +57,7 @@
         localStorage.setItem('likes', JSON.stringify(likes));
       },
       handleLike(id) {
-        const item = this.webix.getItem(id);
+        const item = this.table.getItem(id);
         const likes = this.likes;
 
         if (item.id in likes) {
@@ -64,14 +69,14 @@
         item.like = !item.like;
 
         this.setLikes(likes);
-        this.webix.updateItem(id, item);
+        this.table.updateItem(id, item);
       },
     },
     mounted() {
       webix.ready(() => {
-        this.webix = webix.ui(this.config, this.$el);
+        this.table = webix.ui(this.config, this.$el);
 
-        this.webix.registerFilter(
+        this.table.registerFilter(
           document.getElementById('likeInput'),
           {
             columnId: 'like',
@@ -96,7 +101,7 @@
           },
         );
 
-        this.webix.registerFilter(
+        this.table.registerFilter(
           document.getElementById('search'),
           {
             columnId: 'any',
@@ -125,7 +130,6 @@
             },
           },
         );
-
       });
     },
   };

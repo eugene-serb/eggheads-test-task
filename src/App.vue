@@ -1,8 +1,11 @@
 ﻿<template>
   <section class="container app">
     <h1 class="app__header">Товары категории</h1>
-    <FiltersRow />
-    <DataTable :products="products" />
+    <FiltersRow :tableID="tableID" />
+    <DataTable
+      :tableID="tableID"
+      :products="products"
+    />
   </section>
 </template>
 
@@ -19,6 +22,7 @@
     },
     data() {
       return {
+        tableID: 'table',
         products,
       };
     },
