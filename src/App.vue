@@ -37,6 +37,7 @@
     --color-white: #FFFFFF;
     --color-blue: #345be0;
     --color-grey: #b7b7b7;
+    --color-grey-light: #DADEE0;
     --color-red: #f18578;
     --color-green-dark: #e6f9ed;
     --color-green-light: #08ba5e;
@@ -44,6 +45,7 @@
     --default-font-color: var(--color-black);
     --default-font-size: calc(var(--step-size) * 3);
     --table-header-font-size: calc(var(--step-size) * 4);
+    --table-header-border-color: var(--color-grey-light);
     --table-column-font-size: calc(var(--step-size) * 3);
     --overlay-background-color: var(--color-black-transparent);
     --overlay-modal-background-color: var(--color-white);

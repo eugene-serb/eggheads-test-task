@@ -147,7 +147,7 @@
   .table__header {
     font-size: var(--table-header-font-size);
     font-weight: 500;
-    border-right: 1px solid var(--color-grey) !important;
+    border-right: 1px solid var(--table-header-border-color) !important;
   }
 
   [section='header'] > .webix_hs_center > div:last-child > .table__header {
