@@ -210,7 +210,7 @@
     padding: 4px 8px;
     border-radius: 4px;
     background-color: var(--color-grey);
-    color: #FFFFFF;
+    color: var(--color-white);
   }
 
   .table__position-rate_plus {

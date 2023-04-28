@@ -40,11 +40,13 @@
     --color-red: #f18578;
     --color-green-dark: #e6f9ed;
     --color-green-light: #08ba5e;
-    --font-family: Avenir, Helvetica, Arial, sans-serif;
-    --font-color: var(--color-black);
-    --font-size: calc(var(--step-size) * 3);
+    --default-font-family: Avenir, Helvetica, Arial, sans-serif;
+    --default-font-color: var(--color-black);
+    --default-font-size: calc(var(--step-size) * 3);
     --table-header-font-size: calc(var(--step-size) * 4);
     --table-column-font-size: calc(var(--step-size) * 3);
+    --overlay-background-color: --var(--color-black-transparent);
+    --overlay-modal-background-color: --var(--color-white);
   }
 
   *, ::after, ::before {
@@ -54,13 +56,13 @@
   }
 
   html {
-    font-size: var(--font-size);
-    line-height: var(--font-size);
+    font-size: var(--default-font-size);
+    line-height: var(--default-font-size);
   }
 
   #app {
-    font-family: var(--font-family);
-    color: var(--font-color);
+    font-family: var(--default-font-family);
+    color: var(--default-font-color);
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

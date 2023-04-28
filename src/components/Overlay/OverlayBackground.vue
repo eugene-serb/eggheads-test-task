@@ -36,6 +36,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000BB;
+    background: var(--overlay-background-color);
   }
 </style>
