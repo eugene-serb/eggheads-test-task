@@ -47,7 +47,7 @@
 
 <style>
   .table-settings-button {
-    margin: 0 0 0 -20px;
+    margin: 0;
     padding: 4px;
     width: 200px;
     height: 28px;
