@@ -202,13 +202,26 @@
   }
 
   .table__position-container {
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 8px;
   }
 
   .table__position-rate {
-    margin: 0 0 0 4px;
-    padding: 4px 8px;
+    padding: 0;
+    margin: 0;
     border-radius: 4px;
+    max-height: 28px;
+    min-width: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0 4px;
     background-color: var(--color-grey);
     color: var(--color-white);
   }
