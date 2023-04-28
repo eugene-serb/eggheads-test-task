@@ -31,7 +31,7 @@
               type="checkbox"
               :id="`checkbox-${column.id}`"
               :checked="column.hidden"
-              @click="handle(index)"
+              @click="handleCheckbox(index)"
             />
             <label
               :for="`checkbox-${column.id}`"
@@ -39,6 +39,14 @@
             />
           </div>
         </div>
+      </div>
+      <div class="table-settings-overlay__reset-container">
+        <button 
+          class="table-settings-overlay__reset-button"
+          @click="handleReset"
+        >
+          <span>Сбросить</span>
+        </button>
       </div>
     </div>
   </div>
@@ -83,7 +91,7 @@
       closeOverlay() {
         this.overlayEnabled = false;
       },
-      handle(index) {
+      handleCheckbox(index) {
         const id = this.state[index].id;
 
         if (this.state[index].hidden) {
@@ -93,6 +101,14 @@
         }
 
         this.state[index].hidden = !this.state[index].hidden;
+      },
+      handleReset() {
+        this.state.forEach((item) => {
+          if (item.hidden) {
+            item.hidden = false;
+            $$(this.tableID).showColumn(item.id);
+          }
+        });
       },
     },
     mounted() {
@@ -176,5 +192,15 @@
     align-items: center;
     gap: 0 8px;
     font-size: 16px;
+  }
+
+  .table-settings-overlay__reset-container {
+    margin: 16px 0 0 16px;
+    display: flex;
+  }
+
+  .table-settings-overlay__reset-button {
+    width: 100px;
+    height: 28px;
   }
 </style>
