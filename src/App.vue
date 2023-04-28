@@ -88,6 +88,10 @@
     .container {
       width: 640px;
     }
+
+    .app {
+      margin-top: 32px;
+    }
   }
 
   @media (min-width: 1024px) {
