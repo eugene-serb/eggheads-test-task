@@ -17,9 +17,10 @@ const getConfig = ({ tableID, products, handleLike }) => {
     },
     dragColumn: 'order',
     scroll: true,
+    headerRowHeight: 40,
     rowHeight: 40,
-    data: products,
     tooltip: () => '',
+    data: products,
     columns: [
       {
         id: 'loss',
