@@ -1,9 +1,5 @@
 ﻿<template>
   <div class="search">
-    <img
-      class="search__image"
-      src="/assets/icons/search_black_24dp.svg"
-    />
     <input
       id="search"
       class="search__input"
@@ -41,8 +37,8 @@
     align-items: flex-end;
   }
 
-    .search:has(.search__input:focus) > .search__image,
-    .search:has(.search__input:not(:placeholder-shown)) > .search__image {
+    .search:has(.search__input:focus)::before,
+    .search:has(.search__input:not(:placeholder-shown))::before {
       display: none;
     }
 
@@ -58,11 +54,15 @@
     height: 28px;
   }
 
-  .search__image {
-    position: relative;
-    bottom: 4px;
-    left: 175px;
-    width: 20px;
-    height: 20px;
-  }
+    .search::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: relative;
+      bottom: 4px;
+      left: 175px;
+      background-image: url('../../public/assets/icons/search_black_24dp.svg');
+      background-size: 20px;
+      background-repeat: no-repeat;
+    }
 </style>

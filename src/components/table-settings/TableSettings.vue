@@ -3,7 +3,6 @@
     class="table-settings-button"
     @click="openOverlay"
   >
-    <img src="/assets/icons/settings_black_24dp.svg" />
     <span>Настройка таблицы</span>
   </button>
 
@@ -59,8 +58,20 @@
     gap: 0 4px;
   }
 
-    .table-settings-button > img {
+    .table-settings-button > span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0 4px;
+    }
+
+    .table-settings-button > span::before {
+      content: '';
       width: 16px;
       height: 16px;
+      background-image: url('../../../public/assets/icons/settings_black_24dp.svg');
+      background-size: 16px;
+      background-repeat: no-repeat;
     }
 </style>
