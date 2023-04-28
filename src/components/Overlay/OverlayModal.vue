@@ -12,7 +12,7 @@
 
 <script>
   export default {
-    name: 'OverlayBackground',
+    name: 'OverlayModal',
     methods: {
       closeOverlay() {
         this.$emit('closeOverlay');
@@ -30,7 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: #FFFFFF;
+    background: var(--overlay-modal-background-color);
   }
 
   .modal__close-container {

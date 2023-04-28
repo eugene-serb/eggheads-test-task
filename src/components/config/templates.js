@@ -11,8 +11,8 @@ const position = (item) => {
 
   return `
     <div class="table__position-container">
-      <span>${item.position}</span>
-      <span class="table__position-rate ${styles}">${item.rate}</span>
+      <div>${item.position}</div>
+      <div class="table__position-rate ${styles}">${item.rate}</div>
     </div>
   `;
 };
