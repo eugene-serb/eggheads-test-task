@@ -79,8 +79,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
         css: 'table__column',
         header: [
           {
-            text: '',
-            css: 'table__header'
+            text: 'Избранное',
+            css: 'table__header table__header_hidden'
           },
         ],
         template: (item) => templates.like(item),

@@ -149,6 +149,10 @@
     font-weight: 500;
   }
 
+  .table__header_hidden {
+    color: transparent;
+  }
+
   .table__column {
     text-align: left;
     font-size: var(--table-column-font-size);
