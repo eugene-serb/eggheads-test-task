@@ -22,7 +22,7 @@
     },
     data() {
       return {
-        tableID: 'table',
+        tableID: 'webix-table',
         products,
       };
     },
@@ -33,6 +33,7 @@
   :root {
     --step-size: 4px;
     --color-black: #000000;
+    --color-black-transparent: #000000BB;
     --color-white: #FFFFFF;
     --color-blue: #345be0;
     --color-grey: #b7b7b7;

@@ -17,7 +17,7 @@
 <script>
   /* eslint-disable no-undef */
 
-  import TableSettingsOverlay from '@/components/TableSettings/TableSettingsOverlay.vue';
+  import TableSettingsOverlay from '@/components/table-settings/TableSettingsOverlay.vue';
 
   export default {
     name: 'TableSettings',

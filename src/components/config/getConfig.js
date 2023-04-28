@@ -2,7 +2,8 @@
 
 /* eslint-disable no-undef */
 
-import templates from '@/components/templates.js';
+import templates from '@/components/config/templates.js';
+import tooltips from '@/components/config/tooltips.js';
 
 const getConfig = ({ tableID, products, handleLike }) => {
   return {
@@ -18,6 +19,7 @@ const getConfig = ({ tableID, products, handleLike }) => {
     scroll: true,
     rowHeight: 40,
     data: products,
+    tooltip: () => '',
     columns: [
       {
         id: 'loss',
@@ -61,6 +63,7 @@ const getConfig = ({ tableID, products, handleLike }) => {
         minWidth: 40,
         width: 60,
         maxWidth: 80,
+        tooltip: tooltips.image,
       },
       {
         id: 'sku',

@@ -5,7 +5,7 @@
 <script>
   /* eslint-disable no-undef */
 
-  import getConfig from '@/components/getConfig.js';
+  import getConfig from '@/components/config/getConfig.js';
 
   export default {
     name: 'DataTable',
@@ -166,7 +166,7 @@
     color: var(--color-blue);
   }
 
-  .table__image-container {
+  .table__thumb-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -178,8 +178,12 @@
     overflow: hidden;
   }
 
-  .table__image {
+  .table__thumb {
     width: 36px;
+  }
+
+  .table__image {
+    width: 250px
   }
 
   .table__like-container {

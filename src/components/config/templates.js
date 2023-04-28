@@ -19,8 +19,8 @@ const position = (item) => {
 
 const image = (item) => {
   return `
-    <div class="table__image-container">
-      <img class="table__image" src="/assets/thumbs/${item.image}" />
+    <div class="table__thumb-container">
+      <img class="table__thumb" src="/assets/thumbs/${item.image}" />
     </div>
   `;
 };

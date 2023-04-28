@@ -13,7 +13,7 @@
 <script>
   import SearchBox from '@/components/SearchBox.vue';
   import LikesBox from '@/components/LikesBox.vue';
-  import TableSettings from '@/components/TableSettings/TableSettings.vue';
+  import TableSettings from '@/components/table-settings/TableSettings.vue';
 
   export default {
     name: 'FiltersRow',
