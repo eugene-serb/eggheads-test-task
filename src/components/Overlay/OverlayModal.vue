@@ -30,7 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: var(--modal-background-color);
+    background: var(--overlay-modal-background-color);
   }
 
   .modal__close-container {

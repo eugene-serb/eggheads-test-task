@@ -45,8 +45,8 @@
     --default-font-size: calc(var(--step-size) * 3);
     --table-header-font-size: calc(var(--step-size) * 4);
     --table-column-font-size: calc(var(--step-size) * 3);
-    --overlay-background-color: --var(--color-black-transparent);
-    --overlay-modal-background-color: --var(--color-white);
+    --overlay-background-color: var(--color-black-transparent);
+    --overlay-modal-background-color: var(--color-white);
   }
 
   *, ::after, ::before {
