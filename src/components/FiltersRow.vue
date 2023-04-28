@@ -60,7 +60,6 @@
 
     .filters-row__left-container {
       flex-direction: row;
-      justify-content: flex-start;
       align-items: center;
       gap: 0 16px;
     }
