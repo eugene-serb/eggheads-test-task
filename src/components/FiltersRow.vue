@@ -1,13 +1,21 @@
 ﻿<template>
   <div class="filters-row">
     <div class="filters-row__left-container">
-      <SearchBox :tableID="tableID" />
-      <LikesBox :tableID="tableID" />
+      <SearchBox
+        :tableID="tableID"
+        :SearchToReset="SearchToReset"
+        @searchBoxReloaded="searchBoxReloaded"
+      />
+      <LikesBox
+        :tableID="tableID"
+        :LikesToReset="LikesToReset"
+        @likesBoxReloaded="likesBoxReloaded"
+      />
     </div>
     <div class="filters-row__right-container">
       <TableSettings
         :tableID="tableID"
-        @resetTable="resetTable"
+        @reset="reset"
       />
     </div>
   </div>
@@ -30,10 +38,24 @@
         type: String,
         required: true,
       },
+      SearchToReset: {
+        type: Boolean,
+        default: () => false,
+      },
+      LikesToReset: {
+        type: Boolean,
+        default: () => false,
+      },
     },
     methods: {
-      resetTable() {
-        this.$emit('resetTable');
+      reset() {
+        this.$emit('reset');
+      },
+      likesBoxReloaded() {
+        this.$emit('likesBoxReloaded');
+      },
+      searchBoxReloaded() {
+        this.$emit('searchBoxReloaded');
       },
     },
   };

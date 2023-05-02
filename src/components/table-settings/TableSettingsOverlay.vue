@@ -102,13 +102,25 @@
           }
 
           const filter = this.table.getFilter(item.id);
-          
+
           if (filter) {
-            filter.value = '';
+            const { config } = filter;
+
+            if (config.view === 'filter') {
+              filter.setValue({});
+            }
+
+            if (config.view === 'multiselect') {
+              filter.setValue([]);
+            }
           }
+
+          this.table.markSorting('', 'asc');
         });
 
-        this.$emit('resetTable');
+        this.table.refreshColumns();
+
+        this.$emit('reset');
       },
     },
     mounted() {
