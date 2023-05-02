@@ -32,7 +32,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
@@ -50,7 +51,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
@@ -67,6 +69,7 @@ const getConfig = ({ tableID, products, handleLike }) => {
             text: 'Фото',
             css: 'table__header',
           },
+
           {
             text: '',
             css: 'table__header',
@@ -88,7 +91,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'textFilter',
+            content: 'excelFilter',
+            mode: 'text',
             css: 'table__header',
           },
         ],
@@ -104,7 +108,7 @@ const getConfig = ({ tableID, products, handleLike }) => {
           },
           {
             text: '',
-            css: 'table__header',
+            css: 'table__header table__header_hidden',
           },
         ],
         template: (item) => templates.like(item),
@@ -144,7 +148,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'textFilter',
+            content: 'excelFilter',
+            mode: 'text',
             css: 'table__header',
           },
         ],
@@ -162,7 +167,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'textFilter',
+            content: 'excelFilter',
+            mode: 'text',
             css: 'table__header',
           },
         ],
@@ -177,7 +183,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'textFilter',
+            content: 'excelFilter',
+            mode: 'text',
             css: 'table__header',
           },
         ],
@@ -192,7 +199,7 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: "selectFilter",
+            content: 'multiSelectFilter',
             css: 'table__header',
           },
         ],
@@ -207,7 +214,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
@@ -222,7 +230,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
@@ -237,7 +246,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
@@ -252,7 +262,8 @@ const getConfig = ({ tableID, products, handleLike }) => {
             css: 'table__header',
           },
           {
-            content: 'numberFilter',
+            content: 'excelFilter',
+            mode: 'number',
             css: 'table__header',
           },
         ],
