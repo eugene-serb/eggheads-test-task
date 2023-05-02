@@ -14,7 +14,7 @@
           <input
             type="checkbox"
             :id="`checkbox-${column.id}`"
-            :checked="column.hidden"
+            :checked="!column.hidden"
             @click="handleCheckbox(index)"
           />
           <label
@@ -76,6 +76,8 @@
             hidden: false,
           };
         });
+
+        this.initial = this.table.getState();
       },
       setState() {
         this.table.refreshColumns(this.columns);
@@ -119,6 +121,8 @@
         });
 
         this.table.refreshColumns();
+
+        this.table.setState(this.initial);
 
         this.$emit('reset');
       },
