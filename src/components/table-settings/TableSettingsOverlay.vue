@@ -38,7 +38,7 @@
 <script>
   /* eslint-disable no-undef */
 
-  import OverlayScreen from '@/components/overlay/OverlayScreen.vue';
+  import OverlayScreen from '@/components/overlay-screen/OverlayScreen.vue';
 
   export default {
     name: 'TableSettings',
