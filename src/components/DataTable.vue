@@ -85,11 +85,13 @@
               },
               compare: function (cell, filter, item) {
                 if (filter) {
+                  const filterValue = filter.toLowerCase();
+
                   return (
-                    item.sku.toLowerCase().includes(filter) ||
-                    item.name.toLowerCase().includes(filter) ||
-                    item.brand.toLowerCase().includes(filter) ||
-                    item.merchant.toLowerCase().includes(filter)
+                    item.sku.toLowerCase().includes(filterValue) ||
+                    item.name.toLowerCase().includes(filterValue) ||
+                    item.brand.toLowerCase().includes(filterValue) ||
+                    item.merchant.toLowerCase().includes(filterValue)
                   );
                 }
 
