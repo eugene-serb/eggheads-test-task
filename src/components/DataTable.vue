@@ -18,6 +18,10 @@
         type: Array,
         default: () => [],
       },
+      toReset: {
+        type: Boolean,
+        default: () => false,
+      },
     },
     computed: {
       likes() {
@@ -103,6 +107,10 @@
           );
         });
       },
+      reset() {
+        this.table.clearAll();
+        this.table.load(() => this.config);
+      },
       getLikes() {
         const raw = localStorage.getItem('likes');
 
@@ -130,6 +138,14 @@
 
         this.setLikes(likes);
         this.table.updateItem(id, item);
+      },
+    },
+    watch: {
+      toReset(value) {
+        if (value) {
+          this.reset();
+          this.$emit('reloaded');
+        }
       },
     },
     mounted() {

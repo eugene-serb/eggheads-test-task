@@ -1,10 +1,15 @@
 ﻿<template>
   <section class="container app">
     <h1 class="app__header">Товары категории</h1>
-    <FiltersRow :tableID="tableID" />
+    <FiltersRow
+      :tableID="tableID"
+      @resetTable="resetTable"
+    />
     <DataTable
       :tableID="tableID"
       :products="products"
+      :toReset="toReset"
+      @reloaded="tableReloaded"
     />
   </section>
 </template>
@@ -24,7 +29,16 @@
       return {
         tableID: 'webix-table',
         products,
+        toReset: false,
       };
+    },
+    methods: {
+      resetTable() {
+        this.toReset = true;
+      },
+      tableReloaded() {
+        this.toReset = false;
+      },
     },
   };
 </script>
