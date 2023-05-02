@@ -3,17 +3,10 @@
     <h1 class="app__header">Товары категории</h1>
     <FiltersRow
       :tableID="tableID"
-      :SearchToReset="SearchToReset"
-      :LikesToReset="LikesToReset"
-      @reset="reset"
-      @searchBoxReloaded="searchBoxReloaded"
-      @likesBoxReloaded="likesBoxReloaded"
     />
     <DataTable
       :tableID="tableID"
       :products="products"
-      :TableToReset="TableToReset"
-      @tableReloaded="tableReloaded"
     />
   </section>
 </template>
@@ -33,26 +26,7 @@
       return {
         tableID: 'webix-table',
         products,
-        TableToReset: false,
-        SearchToReset: false,
-        LikesToReset: false,
       };
-    },
-    methods: {
-      reset() {
-        this.TableToReset = true;
-        this.SearchToReset = true;
-        this.LikesToReset = true;
-      },
-      tableReloaded() {
-        this.TableToReset = false;
-      },
-      searchBoxReloaded() {
-        this.SearchToReset = false;
-      },
-      likesBoxReloaded() {
-        this.LikesToReset = false;
-      },
     },
   };
 </script>

@@ -38,24 +38,23 @@
         type: String,
         required: true,
       },
-      SearchToReset: {
-        type: Boolean,
-        default: () => false,
-      },
-      LikesToReset: {
-        type: Boolean,
-        default: () => false,
-      },
+    },
+    data() {
+      return {
+        SearchToReset: false,
+        LikesToReset: false,
+      };
     },
     methods: {
       reset() {
-        this.$emit('reset');
-      },
-      likesBoxReloaded() {
-        this.$emit('likesBoxReloaded');
+        this.SearchToReset = true;
+        this.LikesToReset = true;
       },
       searchBoxReloaded() {
-        this.$emit('searchBoxReloaded');
+        this.SearchToReset = false;
+      },
+      likesBoxReloaded() {
+        this.LikesToReset = false;
       },
     },
   };
