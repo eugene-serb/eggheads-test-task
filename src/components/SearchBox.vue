@@ -6,6 +6,7 @@
       type="search"
       placeholder="Поиск"
       @input="handle"
+      v-model="value"
     />
   </div>
 </template>
@@ -20,10 +21,27 @@
         type: String,
         required: true,
       },
+      SearchToReset: {
+        type: Boolean,
+        default: () => false,
+      },
+    },
+    data() {
+      return {
+        value: '',
+      };
     },
     methods: {
       handle() {
         $$(this.tableID).filterByAll()
+      },
+    },
+    watch: {
+      SearchToReset(value) {
+        if (value) {
+          this.value = '';
+          this.$emit('searchBoxReloaded');
+        }
       },
     },
   };

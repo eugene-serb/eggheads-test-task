@@ -10,7 +10,7 @@
     :tableID="tableID"
     :overlayEnabled="overlayEnabled"
     @closeOverlay="closeOverlay"
-    @resetTable="resetTable"
+    @reset="reset"
   />
 </template>
 
@@ -42,8 +42,8 @@
       closeOverlay() {
         this.overlayEnabled = false;
       },
-      resetTable() {
-        this.$emit('resetTable');
+      reset() {
+        this.$emit('reset');
       },
     },
   };

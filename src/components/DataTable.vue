@@ -18,7 +18,7 @@
         type: Array,
         default: () => [],
       },
-      toReset: {
+      TableToReset: {
         type: Boolean,
         default: () => false,
       },
@@ -143,10 +143,10 @@
       },
     },
     watch: {
-      toReset(value) {
+      TableToReset(value) {
         if (value) {
           this.reset();
-          this.$emit('reloaded');
+          this.$emit('tableReloaded');
         }
       },
     },
