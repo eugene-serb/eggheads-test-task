@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import OverlayBackground from '@/components/overlay/OverlayBackground.vue';
-  import OverlayModal from '@/components/overlay/OverlayModal.vue';
+  import OverlayBackground from '@/components/overlay-screen/OverlayBackground.vue';
+  import OverlayModal from '@/components/overlay-screen/OverlayModal.vue';
 
   export default {
     name: 'OverlayScreen',

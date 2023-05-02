@@ -18,6 +18,10 @@
         type: Array,
         default: () => [],
       },
+      toReset: {
+        type: Boolean,
+        default: () => false,
+      },
     },
     computed: {
       likes() {
@@ -81,11 +85,13 @@
               },
               compare: function (cell, filter, item) {
                 if (filter) {
+                  const filterValue = filter.toLowerCase();
+
                   return (
-                    item.sku.toLowerCase().includes(filter) ||
-                    item.name.toLowerCase().includes(filter) ||
-                    item.brand.toLowerCase().includes(filter) ||
-                    item.merchant.toLowerCase().includes(filter)
+                    item.sku.toLowerCase().includes(filterValue) ||
+                    item.name.toLowerCase().includes(filterValue) ||
+                    item.brand.toLowerCase().includes(filterValue) ||
+                    item.merchant.toLowerCase().includes(filterValue)
                   );
                 }
 
@@ -102,6 +108,10 @@
             },
           );
         });
+      },
+      reset() {
+        this.table.clearAll();
+        this.table.load(() => this.config);
       },
       getLikes() {
         const raw = localStorage.getItem('likes');
@@ -130,6 +140,14 @@
 
         this.setLikes(likes);
         this.table.updateItem(id, item);
+      },
+    },
+    watch: {
+      toReset(value) {
+        if (value) {
+          this.reset();
+          this.$emit('reloaded');
+        }
       },
     },
     mounted() {

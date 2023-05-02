@@ -38,7 +38,7 @@
 <script>
   /* eslint-disable no-undef */
 
-  import OverlayScreen from '@/components/overlay/OverlayScreen.vue';
+  import OverlayScreen from '@/components/overlay-screen/OverlayScreen.vue';
 
   export default {
     name: 'TableSettings',
@@ -62,8 +62,12 @@
       };
     },
     methods: {
+      init() {
+        this.table = $$(this.tableID);
+        this.getState();
+      },
       getState() {
-        this.columns = $$(this.tableID).getColumns(true);
+        this.columns = this.table.getColumns(true);
 
         this.state = this.columns.map((column) => {
           return {
@@ -74,7 +78,7 @@
         });
       },
       setState() {
-        $$(this.tableID).refreshColumns(this.columns);
+        this.table.refreshColumns(this.columns);
       },
       closeOverlay() {
         this.$emit('closeOverlay');
@@ -83,9 +87,9 @@
         const id = this.state[index].id;
 
         if (this.state[index].hidden) {
-          $$(this.tableID).showColumn(id);
+          this.table.showColumn(id);
         } else {
-          $$(this.tableID).hideColumn(id);
+          this.table.hideColumn(id);
         }
 
         this.state[index].hidden = !this.state[index].hidden;
@@ -94,14 +98,22 @@
         this.state.forEach((item) => {
           if (item.hidden) {
             item.hidden = false;
-            $$(this.tableID).showColumn(item.id);
+            this.table.showColumn(item.id);
+          }
+
+          const filter = this.table.getFilter(item.id);
+          
+          if (filter) {
+            filter.value = '';
           }
         });
+
+        this.$emit('resetTable');
       },
     },
     mounted() {
       setTimeout(() => {
-        this.getState();
+        this.init();
       }, 1000);
     },
   };

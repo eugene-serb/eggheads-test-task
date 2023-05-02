@@ -5,7 +5,10 @@
       <LikesBox :tableID="tableID" />
     </div>
     <div class="filters-row__right-container">
-      <TableSettings :tableID="tableID" />
+      <TableSettings
+        :tableID="tableID"
+        @resetTable="resetTable"
+      />
     </div>
   </div>
 </template>
@@ -26,6 +29,11 @@
       tableID: {
         type: String,
         required: true,
+      },
+    },
+    methods: {
+      resetTable() {
+        this.$emit('resetTable');
       },
     },
   };
