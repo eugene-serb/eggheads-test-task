@@ -29,7 +29,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Упущенный %',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
         minWidth: 25,
@@ -43,7 +47,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Позиция',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
         template: templates.position,
@@ -57,7 +65,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Фото',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            text: '',
+            css: 'table__header',
           },
         ],
         template: templates.image,
@@ -73,7 +85,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Артикул',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'textFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -84,7 +100,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Избранное',
-            css: 'table__header table__header_hidden'
+            css: 'table__header table__header_hidden',
+          },
+          {
+            text: '',
+            css: 'table__header',
           },
         ],
         template: (item) => templates.like(item),
@@ -98,7 +118,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'График продаж',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            text: '',
+            css: 'table__header',
           },
         ],
         css: 'table__column',
@@ -117,7 +141,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Имя',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'textFilter',
+            css: 'table__header',
           },
         ],
         minWidth: 200,
@@ -131,7 +159,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Бренд',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'textFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -142,7 +174,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Продавец',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'textFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -153,7 +189,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Группа',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: "selectFilter",
+            css: 'table__header',
           },
         ],
       },
@@ -164,7 +204,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Остаток',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -175,7 +219,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Отзывы',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -186,7 +234,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Рейтинг',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
       },
@@ -197,7 +249,11 @@ const getConfig = ({ tableID, products, handleLike }) => {
         header: [
           {
             text: 'Цена',
-            css: 'table__header'
+            css: 'table__header',
+          },
+          {
+            content: 'numberFilter',
+            css: 'table__header',
           },
         ],
       },

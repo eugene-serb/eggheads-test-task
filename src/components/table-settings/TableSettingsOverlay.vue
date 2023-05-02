@@ -100,6 +100,12 @@
             item.hidden = false;
             this.table.showColumn(item.id);
           }
+
+          const filter = this.table.getFilter(item.id);
+          
+          if (filter) {
+            filter.value = '';
+          }
         });
 
         this.$emit('resetTable');
