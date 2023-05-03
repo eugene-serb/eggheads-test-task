@@ -1,7 +1,5 @@
 # webix-test-task
 
-website: https://eugene-serb.github.io/webix-test-task/
-
 ### Задачи
 
 - [+] Фотография уменьшенного размера, при наведении показывается увеличенная фотография.
